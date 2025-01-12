@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6406945261597865586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6406945261597865584}
+  - component: {fileID: 6406945261597865585}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6406945261597865584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406945261597865586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.832764, y: 0.08484764, z: -0.11947271}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6406945261597865585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406945261597865586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04884b9acd9a3404e89d99aa7d5d7070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - name: Bounce
+    clip: {fileID: 8300000, guid: ded22d42e1bc6da468c58240c12f4690, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Light Bounce
+    clip: {fileID: 8300000, guid: ded22d42e1bc6da468c58240c12f4690, type: 3}
+    volume: 0.1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Card Bounce
+    clip: {fileID: 8300000, guid: ded22d42e1bc6da468c58240c12f4690, type: 3}
+    volume: 0.1
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: Card Select
+    clip: {fileID: 8300000, guid: 49f90e772925bf247be82bac0e1d4432, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card Throw
+    clip: {fileID: 8300000, guid: b8ccf3fd2eec0f9458cbeb47986aa63c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 95f7379ea33801244824722e2aa713eb, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Button Click
+    clip: {fileID: 8300000, guid: 0adec706e4624d04185ccc9119e4232a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hit the Deck
+    clip: {fileID: 8300000, guid: 11b0a4ea28db21d4199026ab69f2ed12, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
