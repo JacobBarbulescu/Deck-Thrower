@@ -36,4 +36,4 @@ At the start of each round, select a card to add to your inventory, then fight o
 
 [Click here](https://gamerhtml.itch.io/deck-thrower) to play the game in the browser or download the compiled game at Itch.io.
 
-[Click here](https://git-link.vercel.app/api/download?url=https%3A%2F%2Fgithub.com%2FJacobBarbulescu%2FDeck-Thrower%2Ftree%2Fmain&filename=Deck-Thrower-Source.zip) to download the source code of the project.
+[Click here](https://downgit.github.io/#/home?url=https://github.com/JacobBarbulescu/Deck-Thrower) to download the source code of the project.
