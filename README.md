@@ -3,7 +3,7 @@
 
 Deck Thrower is a 2D top down action roguelike developed in Unity for the Stevens Game Development Club Game Jam Alpha.
 
-The Game was developed from October 18th to October 20th independently by [@JacobBarbulescu](https://www.github.com/JacobBarbulescu) and won second place in the game jam.
+The game was developed from October 18th to October 20th independently by [@JacobBarbulescu](https://www.github.com/JacobBarbulescu) and won second place in the game jam.
 
 ![Deck Thrower](https://github.com/user-attachments/assets/b99693b6-c566-429e-a426-5dac910fcf21)
 
