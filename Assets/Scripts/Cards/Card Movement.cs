@@ -27,7 +27,7 @@ public class cardMovement : MonoBehaviour
         transform = GetComponent<Transform>();
 
         //Have it fly forward in the direction the player is facing
-        rb.velocity = transform.up * cardSpeed;
+        rb.linearVelocity = transform.up * cardSpeed;
         //Have it also spin
         rb.AddTorque(cardTorque);
 

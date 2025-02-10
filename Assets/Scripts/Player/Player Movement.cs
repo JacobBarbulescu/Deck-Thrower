@@ -71,7 +71,7 @@ public class playerMovement : MonoBehaviour
         }
 
         //Sets the player's velocity based on input (setting velocity means that we won't move through walls)
-        rb.velocity = new Vector2(hor * speed, ver * speed);
+        rb.linearVelocity = new Vector2(hor * speed, ver * speed);
 
         //Calculates the angle from the player to the mouse (Atan2 returns a radian, so we must convert it to degrees)
         float playerAngle = Mathf.Atan2(mousePos.x - playerPos.x, mousePos.y - playerPos.y) * Mathf.Rad2Deg * -1;
