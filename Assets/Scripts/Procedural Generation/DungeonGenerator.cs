@@ -22,7 +22,7 @@ public class DungeonGenerator : MonoBehaviour
         if (roomPrefabs.Count == 0) return;
 
         // Start with the first room at (0,0)
-        RoomData startRoom = Instantiate(roomPrefabs[0], Vector3.zero, Quaternion.identity, transform);
+        RoomData startRoom = roomPrefabs[0];
         PlaceRoom(startRoom, Vector2Int.zero);
 
         // Generate additional rooms
@@ -41,7 +41,7 @@ public class DungeonGenerator : MonoBehaviour
             foreach (var exit in placedRoom.roomData.exits)
             {
                 // Find matching room
-                RoomData newRoom = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Count)]);
+                RoomData newRoom = roomPrefabs[Random.Range(0, roomPrefabs.Count)];
                 RoomData.ExitPoint matchingExit = FindMatchingExit(newRoom, exit.direction);
 
                 if (matchingExit == null) continue;
