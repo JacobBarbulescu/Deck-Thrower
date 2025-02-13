@@ -1,52 +1,137 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Tilemaps;
 
 public class DungeonGenerator : MonoBehaviour
 {
-    public List<RoomData> roomPool;
-    public int dungeonWidth = 5;
-    public int dungeonHeight = 5;
-    public Grid grid;
+    [SerializeField] private List<RoomData> roomPrefabs;
+    [SerializeField] private Tilemap tilemap;
+    [SerializeField] private List<TileBase> tileReferences;
+    [SerializeField] private int maxRooms = 10;
 
-    private List<RoomData> generatedRooms = new List<RoomData>();
+    private HashSet<Vector2Int> occupiedTiles = new();
+    private List<RoomInstance> placedRooms = new();
 
-    void Start()
+    private void Start()
     {
-        if (grid == null)
-        {
-            Debug.LogError("No Grid GameObject assigned!");
-            return;
-        }
-
         GenerateDungeon();
     }
 
-    void GenerateDungeon()
+    private void GenerateDungeon()
     {
-        if (roomPool.Count == 0)
+        if (roomPrefabs.Count == 0) return;
+
+        // Start with the first room at (0,0)
+        RoomData startRoom = Instantiate(roomPrefabs[0], Vector3.zero, Quaternion.identity, transform);
+        PlaceRoom(startRoom, Vector2Int.zero);
+
+        // Generate additional rooms
+        for (int i = 1; i < maxRooms; i++)
         {
-            Debug.LogError("No rooms in the pool!");
-            return;
+            TryPlaceNextRoom();
         }
 
-        RoomData firstRoom = Instantiate(roomPool[Random.Range(0, roomPool.Count)], Vector3.zero, Quaternion.identity, grid.transform);
-        generatedRooms.Add(firstRoom);
+        Debug.Log($"Dungeon Generated with {placedRooms.Count} rooms.");
+    }
 
-        // Generate the rest of the rooms
-        for (int y = 0; y < dungeonHeight; y++)
+    private void TryPlaceNextRoom()
+    {
+        foreach (var placedRoom in placedRooms)
         {
-            for (int x = 0; x < dungeonWidth; x++)
+            foreach (var exit in placedRoom.roomData.exits)
             {
-                if (x == 0 && y == 0) continue;
+                // Find matching room
+                RoomData newRoom = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Count)]);
+                RoomData.ExitPoint matchingExit = FindMatchingExit(newRoom, exit.direction);
 
-                RoomData newRoom = Instantiate(roomPool[Random.Range(0, roomPool.Count)], Vector3.zero, Quaternion.identity, grid.transform);
-                RoomData previousRoom = generatedRooms[generatedRooms.Count - 1];
+                if (matchingExit == null) continue;
 
-                //RoomPlacer.PlaceRoomNextTo(previousRoom, newRoom);
-                generatedRooms.Add(newRoom);
+                // Calculate new position
+                Vector2Int newRoomPosition = placedRoom.gridPosition + GetDoorOffset(exit.direction, exit.position, matchingExit.position);
+
+                if (!Overlaps(newRoom, newRoomPosition))
+                {
+                    PlaceRoom(newRoom, newRoomPosition);
+                    return;
+                }
             }
         }
+    }
 
-        Debug.Log("Dungeon Generation Complete!");
+    private void PlaceRoom(RoomData roomData, Vector2Int gridPos)
+    {
+        // Store occupied tiles
+        foreach (var tileData in roomData.tiles)
+        {
+            occupiedTiles.Add(gridPos + tileData.position);
+        }
+
+        placedRooms.Add(new RoomInstance(roomData, gridPos));
+
+        // Render room
+        foreach (var tileData in roomData.tiles)
+        {
+            TileBase tile = GetTileByName(tileData.tileName);
+            if (tile != null)
+            {
+                Vector3Int worldPos = new Vector3Int(gridPos.x + tileData.position.x, gridPos.y + tileData.position.y, 0);
+                tilemap.SetTile(worldPos, tile);
+            }
+        }
+    }
+
+    private bool Overlaps(RoomData room, Vector2Int pos)
+    {
+        foreach (var tile in room.tiles)
+        {
+            if (occupiedTiles.Contains(pos + tile.position))
+                return true;
+        }
+        return false;
+    }
+
+    private RoomData.ExitPoint FindMatchingExit(RoomData room, RoomData.Direction direction)
+    {
+        return room.exits.Find(exit => exit.direction == GetOppositeDirection(direction));
+    }
+
+    private Vector2Int GetDoorOffset(RoomData.Direction dir, Vector2Int exitPos, Vector2Int matchingPos)
+    {
+        switch (dir)
+        {
+            case RoomData.Direction.North: return new Vector2Int(exitPos.x - matchingPos.x, exitPos.y + 1 - matchingPos.y);
+            case RoomData.Direction.South: return new Vector2Int(exitPos.x - matchingPos.x, exitPos.y - 1 - matchingPos.y);
+            case RoomData.Direction.East: return new Vector2Int(exitPos.x + 1 - matchingPos.x, exitPos.y - matchingPos.y);
+            case RoomData.Direction.West: return new Vector2Int(exitPos.x - 1 - matchingPos.x, exitPos.y - matchingPos.y);
+            default: return Vector2Int.zero;
+        }
+    }
+
+    private RoomData.Direction GetOppositeDirection(RoomData.Direction dir)
+    {
+        return dir switch
+        {
+            RoomData.Direction.North => RoomData.Direction.South,
+            RoomData.Direction.South => RoomData.Direction.North,
+            RoomData.Direction.East => RoomData.Direction.West,
+            RoomData.Direction.West => RoomData.Direction.East,
+            _ => dir
+        };
+    }
+
+    private TileBase GetTileByName(string tileName)
+    {
+        return tileReferences.Find(tile => tile != null && tile.name == tileName);
+    }
+
+    private class RoomInstance
+    {
+        public RoomData roomData;
+        public Vector2Int gridPosition;
+        public RoomInstance(RoomData room, Vector2Int pos)
+        {
+            roomData = room;
+            gridPosition = pos;
+        }
     }
 }

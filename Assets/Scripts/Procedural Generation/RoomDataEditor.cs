@@ -11,7 +11,7 @@ public class RoomDataEditor : Editor
         DrawDefaultInspector();
 
         RoomData roomData = (RoomData)target;
-        if (GUILayout.Button("Find Doors & Set Room Size"))
+        if (GUILayout.Button("Find Doors & Set Room Data"))
         {
             UpdateRoomData(roomData);
         }
@@ -32,6 +32,8 @@ public class RoomDataEditor : Editor
 
         // 2. Find Doors
         List<RoomData.ExitPoint> exits = new List<RoomData.ExitPoint>();
+        List<RoomData.TileData> tileDataList = new List<RoomData.TileData>();
+
         for (int x = bounds.xMin; x < bounds.xMax; x++)
         {
             for (int y = bounds.yMin; y < bounds.yMax; y++)
@@ -39,22 +41,34 @@ public class RoomDataEditor : Editor
                 Vector3Int tilePos = new Vector3Int(x, y, 0);
                 TileBase tile = tilemap.GetTile(tilePos);
 
-                if (tile != null && tile.name.Contains("Door"))
+                if (tile != null)
                 {
-                    RoomData.ExitPoint exit = new RoomData.ExitPoint
+                    // Save tile data
+                    tileDataList.Add(new RoomData.TileData
                     {
                         position = new Vector2Int(x - bounds.xMin, y - bounds.yMin),
-                        direction = DetermineDirection(tilemap, x, y)
-                    };
-                    exits.Add(exit);
+                        tileName = tile.name
+                    });
+
+                    // Identify doors
+                    if (tile.name.Contains("Door"))
+                    {
+                        RoomData.ExitPoint exit = new RoomData.ExitPoint
+                        {
+                            position = new Vector2Int(x - bounds.xMin, y - bounds.yMin),
+                            direction = DetermineDirection(tilemap, x, y)
+                        };
+                        exits.Add(exit);
+                    }
                 }
             }
         }
 
         // 3. Apply to RoomData
         roomData.exits = exits;
+        roomData.tiles = tileDataList;
         EditorUtility.SetDirty(roomData);
-        Debug.Log($"Updated {roomData.gameObject.name}: Size {roomData.size}, {exits.Count} doors found.");
+        Debug.Log($"Updated {roomData.gameObject.name}: Size {roomData.size}, {tileDataList.Count} tiles, {exits.Count} doors found.");
     }
 
     private RoomData.Direction DetermineDirection(Tilemap tilemap, int x, int y)

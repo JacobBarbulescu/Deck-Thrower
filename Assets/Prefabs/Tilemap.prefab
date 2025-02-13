@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2755511099249801037}
   - component: {fileID: 7979523296067748675}
   - component: {fileID: 8493503035637005563}
-  - component: {fileID: 6868234648468833058}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2169,38 +2168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e410cd3b9c9b29f488a84f737f2359e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 20, y: 11}
-  exits:
-  - position: {x: 3, y: 10}
-    direction: 0
-  - position: {x: 4, y: 10}
-    direction: 0
-  - position: {x: 11, y: 10}
-    direction: 0
-  - position: {x: 12, y: 10}
-    direction: 0
-  - position: {x: 13, y: 10}
-    direction: 0
-  - position: {x: 14, y: 10}
-    direction: 0
-  - position: {x: 19, y: 4}
-    direction: 2
-  - position: {x: 19, y: 5}
-    direction: 2
-  - position: {x: 19, y: 6}
-    direction: 2
---- !u!114 &6868234648468833058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2977240101285618109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e410cd3b9c9b29f488a84f737f2359e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   size: {x: 20, y: 18}
   exits:
   - position: {x: 0, y: 10}
@@ -2221,3 +2188,404 @@ MonoBehaviour:
     direction: 1
   - position: {x: 10, y: 8}
     direction: 1
+  tiles:
+  - position: {x: 0, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 0, y: 9}
+    tileName: Level Layout_0
+  - position: {x: 0, y: 10}
+    tileName: Door Tile
+  - position: {x: 0, y: 11}
+    tileName: Door Tile
+  - position: {x: 0, y: 12}
+    tileName: Door Tile
+  - position: {x: 0, y: 13}
+    tileName: Level Layout_0
+  - position: {x: 0, y: 14}
+    tileName: Level Layout_0
+  - position: {x: 0, y: 15}
+    tileName: Level Layout_0
+  - position: {x: 0, y: 16}
+    tileName: Level Layout_0
+  - position: {x: 0, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 1, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 1, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 1, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 2, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 2, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 2, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 3, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 3, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 3, y: 17}
+    tileName: Door Tile
+  - position: {x: 4, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 4, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 4, y: 17}
+    tileName: Door Tile
+  - position: {x: 5, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 5, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 5, y: 17}
+    tileName: Door Tile
+  - position: {x: 6, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 6, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 6, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 7, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 7, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 7, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 8, y: 8}
+    tileName: Door Tile
+  - position: {x: 8, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 8, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 9, y: 8}
+    tileName: Door Tile
+  - position: {x: 9, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 9, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 10, y: 8}
+    tileName: Door Tile
+  - position: {x: 10, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 10, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 11, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 11, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 11, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 12, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 12, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 12, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 13, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 13, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 13, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 14, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 14, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 14, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 15, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 15, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 15, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 16, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 16, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 16, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 17, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 17, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 17, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 18, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 18, y: 9}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 10}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 11}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 12}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 13}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 14}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 15}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 16}
+    tileName: Level Layout_42
+  - position: {x: 18, y: 17}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 8}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 9}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 10}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 11}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 12}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 13}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 14}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 15}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 16}
+    tileName: Level Layout_0
+  - position: {x: 19, y: 17}
+    tileName: Level Layout_0
